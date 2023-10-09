@@ -1,13 +1,7 @@
-//UNIVERSIDAD DEL VALLE DE GUATEMALA
-//PROGRAMACIÓN ORIENTADA A OBJETOS
-// DAHSRTY SECAIRA, MARIO CABRERA, ISABELLA RAMÍREZ, ESTEBAN RAMÍREZ
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Esta es la clase principal que contiene el método principal `main`.
- */
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -57,3 +51,4 @@ public class Main {
          estrellas.getPrueba().iniciarPrueba();
     }
 }
+
