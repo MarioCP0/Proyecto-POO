@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -44,7 +44,7 @@ public class Main {
         usuario = new Usuario("Juan");
 
          // El usuario elige un nivel de dificultad y un tema
-         usuario.elegirNivelDificultad(basico);
+         usuario.elegirNivelDificultad();
          usuario.elegirTema(estrellas);
 
          // El usuario estudia el tema y luego realiza una prueba
