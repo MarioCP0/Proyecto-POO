@@ -46,17 +46,17 @@ class Usuario {
 
         public void elegirNivelDificultad() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Por favor, elige un nivel de dificultad: Básico, Intermedio, Avanzado");
+        System.out.println("Por favor, elige un nivel de dificultad: Básico, Intermedio, Avanzado (sin tildes y en minúsculas)");
         String nivel = scanner.nextLine();
 
         switch (nivel.toLowerCase()) {
-            case "Básico":
+            case "basico":
                 this.nivelDificultad = new NivelDificultad("Básico");
                 break;
-            case "Intermedio":
+            case "intermedio":
                 this.nivelDificultad = new NivelDificultad("Intermedio");
                 break;
-            case "Avanzado":
+            case "avanzado":
                 this.nivelDificultad = new NivelDificultad("Avanzado");
                 break;
             default:
