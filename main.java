@@ -17,9 +17,9 @@ public class main {
         NivelDificultad avanzado = new NivelDificultad("Avanzado");
 
         // Crear los temas
-        Tema estrellas = new Tema("Estrellas", "Información sobre estrellas...");
-        Tema galaxias = new Tema("Galaxias", "Información sobre galaxias...");
-        Tema expansionUniverso = new Tema("Expansión del Universo", "Información sobre la expansión del universo...");
+        Tema estrellas = new Tema("Estrellas", "Las estrellas son enormes esferas de gas caliente que emiten luz y calor a partir de la energía nuclear producida en su núcleo. Nuestro sol es una estrella.");
+        Tema galaxias = new Tema("Galaxias", "Las galaxias son vastos sistemas compuestos por polvo, gas y millones de estrellas. Nuestra galaxia, la Vía Láctea, es solo una de las miles de millones de galaxias en el universo.");
+        Tema expansionUniverso = new Tema("Expansión del Universo", "La expansión del universo es el fenómeno por el cual el universo se está expandiendo a un ritmo acelerado. Fue propuesto por primera vez por Edwin Hubble en 1929.");
 
         // Asignar los temas a los niveles de dificultad
         basico.getTemas().add(estrellas);
