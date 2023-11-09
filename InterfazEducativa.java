@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,10 +18,13 @@ public class InterfazEducativa {
     private JRadioButton opcion2;
     private JRadioButton opcion3;
     private JRadioButton opcion4;
+    private JButton botonSiguiente;
     private List<String[]> preguntas;
+    private int indicePreguntaActual = 0;
+    private String nivelDificultad;
 
     public InterfazEducativa(String nombreUsuario, String nivelDificultad) {
-        // Cargar las preguntas desde el archivo CSV
+        this.nivelDificultad = nivelDificultad;
         preguntas = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader("preguntas.csv"))) {
             String linea;
@@ -73,8 +78,33 @@ public class InterfazEducativa {
         grupoOpciones.add(opcion4);
         panel.add(opcion4);
 
+        // Crear el botón de "siguiente"
+        botonSiguiente = new JButton("Siguiente");
+        botonSiguiente.setBounds(50, 200, 300, 25);
+        botonSiguiente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                indicePreguntaActual++;
+                if (indicePreguntaActual < preguntas.size() && indicePreguntaActual < 3) {
+                    actualizarPregunta();
+                } else {
+                    // Aquí puedes redirigir a la pantalla final
+                    JOptionPane.showMessageDialog(frame, "¡Prueba terminada! Mostraremos tu calificación pronto.");
+                }
+            }
+        });
+        panel.add(botonSiguiente);
+
         // Buscar la primera pregunta para el nivel de dificultad seleccionado
-        for (String[] pregunta : preguntas) {
+        actualizarPregunta();
+
+        // Hacer visible la ventana
+        frame.setVisible(true);
+    }
+
+    private void actualizarPregunta() {
+        for (int i = indicePreguntaActual; i < preguntas.size(); i++) {
+            String[] pregunta = preguntas.get(i);
             if (pregunta[0].equals(nivelDificultad)) {
                 etiquetaPregunta.setText(pregunta[2]);
                 // Aquí puedes actualizar las opciones de respuesta
@@ -85,8 +115,6 @@ public class InterfazEducativa {
                 break;  // Esto hará que solo se muestre la primera pregunta que coincida con el nivel de dificultad
             }
         }
-
-        // Hacer visible la ventana
-        frame.setVisible(true);
     }
 }
+
