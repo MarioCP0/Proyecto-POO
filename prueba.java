@@ -3,7 +3,7 @@ import java.util.List;
 /**
  * Clase Pregunta que representa una pregunta de opción múltiple.
  */
-public class Pregunta {
+public class prueba {
     private String enunciado;
     private List<String> opciones;
     private String respuestaCorrecta;
@@ -15,7 +15,7 @@ public class Pregunta {
      * @param opciones Las opciones de respuesta para la pregunta.
      * @param respuestaCorrecta La respuesta correcta para la pregunta.
      */
-    public Pregunta(String enunciado, List<String> opciones, String respuestaCorrecta) {
+    public prueba(String enunciado, List<String> opciones, String respuestaCorrecta) {
         this.enunciado = enunciado;
         this.opciones = opciones;
         this.respuestaCorrecta = respuestaCorrecta;

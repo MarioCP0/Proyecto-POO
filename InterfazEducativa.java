@@ -57,6 +57,17 @@ public class InterfazEducativa {
         etiquetaPregunta = new JLabel("");
         etiquetaPregunta.setBounds(50, 50, 300, 25);
         panel.add(etiquetaPregunta);
+        
+         // Cambia el layout del panel a BoxLayout en el eje Y
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+        // Crear una scroller para la etiqueta de la pregunta
+        JScrollPane scrollPane = new JScrollPane();
+        panel.add(scrollPane);
+
+        // Agrega la etiqueta de pregunta a la Jscroller
+        etiquetaPregunta = new JLabel("");
+        scrollPane.setViewportView(etiquetaPregunta);
 
         // Crear los botones de opción para las respuestas
         grupoOpciones = new ButtonGroup();
@@ -139,11 +150,14 @@ public class InterfazEducativa {
     }
 
 
+    // En el método mostrarSiguientePregunta
     private void mostrarSiguientePregunta() {
-        if (preguntaActual < preguntas.size() - 1 && preguntaActual<4) {
+        if (preguntaActual < preguntas.size() - 1 && preguntaActual < 4) {
             preguntaActual++;
             String[] pregunta = preguntas.get(preguntaActual);
-            etiquetaPregunta.setText(pregunta[2]);
+
+            // Usa HTML para permitir el ajuste del texto y el desplazamiento si es necesario
+            etiquetaPregunta.setText("<html>" + pregunta[2] + "</html>");
             opcion1.setText(pregunta[3]);
             opcion2.setText(pregunta[4]);
             opcion3.setText(pregunta[5]);

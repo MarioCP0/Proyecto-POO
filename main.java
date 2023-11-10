@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Clase principal que ejecuta la aplicación.
  */
-public class Main {
+public class main {
     /**
      * Método principal que se ejecuta al iniciar la aplicación.
      *
