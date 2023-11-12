@@ -72,25 +72,25 @@ public class InterfazEducativa {
         // Crear los botones de opción para las respuestas
         grupoOpciones = new ButtonGroup();
         opcion1 = new JRadioButton("Opción 1");
-        opcion1.setActionCommand("Opción 1"); // Configura el ActionCommand
+        opcion1.setActionCommand("Opción 1"); 
         opcion1.setBounds(50, 80, 300, 25);
         grupoOpciones.add(opcion1);
         panel.add(opcion1);
 
         opcion2 = new JRadioButton("Opción 2");
-        opcion2.setActionCommand("Opción 2"); // Configura el ActionCommand
+        opcion2.setActionCommand("Opción 2"); 
         opcion2.setBounds(50, 110, 300, 25);
         grupoOpciones.add(opcion2);
         panel.add(opcion2);
 
         opcion3 = new JRadioButton("Opción 3");
-        opcion3.setActionCommand("Opción 3"); // Configura el ActionCommand
+        opcion3.setActionCommand("Opción 3"); 
         opcion3.setBounds(50, 140, 300, 25);
         grupoOpciones.add(opcion3);
         panel.add(opcion3);
 
         opcion4 = new JRadioButton("Opción 4");
-        opcion4.setActionCommand("Opción 4"); // Configura el ActionCommand
+        opcion4.setActionCommand("Opción 4"); 
         opcion4.setBounds(50, 170, 300, 25);
         grupoOpciones.add(opcion4);
         panel.add(opcion4);
