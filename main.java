@@ -17,7 +17,8 @@ public class main {
 
         System.out.println("Por favor, elige un nivel de dificultad: Básico, Intermedio, Avanzado");
         String nivelDificultad = scanner.nextLine();
-
+        
+        VentanaInformacion ventanainformacion = new VentanaInformacion();
         InterfazEducativa interfaz = new InterfazEducativa(nombreUsuario, nivelDificultad);
     }
 }
