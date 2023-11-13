@@ -39,7 +39,7 @@ public class InterfazEducativa {
 
 
         // Crear el marco de la ventana
-        frame = new JFrame("AstroEducación");
+        frame = new JFrame("CosmoGuía");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
 
@@ -49,7 +49,7 @@ public class InterfazEducativa {
         panel.setLayout(null);
 
         // Crear la etiqueta de bienvenida
-        etiquetaBienvenida = new JLabel("¡Bienvenido al AstroEducación, " + nombreUsuario + "!");
+        etiquetaBienvenida = new JLabel("¡Bienvenido a CosmoGuía, " + nombreUsuario + "!");
         etiquetaBienvenida.setBounds(50, 20, 300, 25);
         panel.add(etiquetaBienvenida);
 
