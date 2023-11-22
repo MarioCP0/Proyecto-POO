@@ -123,7 +123,7 @@ public class InterfazEducativaGUI {
         int respuestasCorrectas = juego.obtenerRespuestasCorrectas();
         int totalPreguntas = 5;
     
-        double nota = (double) respuestasCorrectas / totalPreguntas * 100;
+        double nota = (double) (respuestasCorrectas / totalPreguntas) * 100;
     
         JOptionPane.showMessageDialog(frame, "Tu nota final es: " + nota + "%", "Nota Final", JOptionPane.INFORMATION_MESSAGE);
     }

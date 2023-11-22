@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.awt.Color;
 
 /**
  * Clase InterfazEducativa que representa la interfaz gráfica de usuario para una aplicación educativa.
@@ -116,30 +117,33 @@ public class InterfazEducativa {
      * Método para verificar la respuesta seleccionada por el usuario.
      */
     private void verificarRespuesta() {
-    String[] pregunta = preguntas.get(preguntaActual);
-    String respuestaCorrecta = pregunta[7]; 
+        String[] pregunta = preguntas.get(preguntaActual);
+        String respuestaCorrecta = pregunta[7]; 
 
-    ButtonModel model = grupoOpciones.getSelection();
-    
-    if (model instanceof DefaultButtonModel) {
-        JRadioButton respuestaSeleccionada = (JRadioButton) ((DefaultButtonModel) model).getGroup().getElements().nextElement();
+        ButtonModel model = grupoOpciones.getSelection();
+        
+        if (model instanceof DefaultButtonModel) {
+            JRadioButton respuestaSeleccionada = (JRadioButton) ((DefaultButtonModel) model).getGroup().getElements().nextElement();
 
-        if (respuestaSeleccionada != null) {
-            String respuestaUsuario = respuestaSeleccionada.getText();
-            if (respuestaUsuario.equals(respuestaCorrecta)) {
-                respuestasCorrectas++; 
-                JOptionPane.showMessageDialog(frame, "¡Respuesta correcta!", "Feedback", JOptionPane.INFORMATION_MESSAGE);
+            if (respuestaSeleccionada != null) {
+                String respuestaUsuario = respuestaSeleccionada.getText();
+                if (respuestaUsuario.equals(respuestaCorrecta)) {
+                    respuestasCorrectas++; 
+                    respuestaSeleccionada.setForeground(Color.GREEN); // Cambia el color del texto a verde si la respuesta es correcta
+                    JOptionPane.showMessageDialog(frame, "¡Respuesta correcta!", "Feedback", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    respuestasIncorrectas++; 
+                    respuestaSeleccionada.setForeground(Color.RED); // Cambia el color del texto a rojo si la respuesta es incorrecta
+                    JOptionPane.showMessageDialog(frame, "Respuesta incorrecta. La respuesta correcta es: " + respuestaCorrecta, "Feedback", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
-                respuestasIncorrectas++; 
-                JOptionPane.showMessageDialog(frame, "Respuesta incorrecta. La respuesta correcta es: " + respuestaCorrecta, "Feedback", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "Por favor, seleccione una respuesta.", "Feedback", JOptionPane.WARNING_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(frame, "Por favor, seleccione una respuesta.", "Feedback", JOptionPane.WARNING_MESSAGE);
         }
+ 
+        mostrarSiguientePregunta();
     }
     
-    mostrarSiguientePregunta();
-}
     /**
      * Método para mostrar la puntuación final al usuario.
      */
