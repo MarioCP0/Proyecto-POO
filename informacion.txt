@@ -1,1 +1,27 @@
-anoche te llame y no estabas en el hotel
+Datos de nivel básico de astronomía:
+1. ¿Sabías que Mercurio, a pesar de su pequeño tamaño, tiene el honor de ser el planeta más cercano al Sol?
+2. Nuestro sistema solar es como una pequeña ciudad en el vasto universo, compuesta por 8 planetas únicos y diversos.
+3. Nuestro hogar cósmico, el sistema solar, reside en una hermosa galaxia espiral conocida como la Vía Láctea.
+4. Valentina Tereshkova rompió barreras y desafió las expectativas cuando se convirtió en la primera mujer astronauta.
+5. Los meteoritos, esas rocas espaciales que llegan a la Tierra, son como mensajes cósmicos de las estrellas.
+6. Apollo 11, una nave espacial que llevó a los primeros humanos a la Luna en 1969, cambió la historia de la humanidad para siempre.
+7. Marte, el planeta rojo, tiene 2 satélites naturales que giran a su alrededor, Fobos y Deimos.
+8. Mariner 4, la primera sonda espacial en llegar a Marte, abrió un nuevo capítulo en la exploración espacial.
+
+Datos de nivel intermedio de astronomía:
+1. Aunque puede parecer solitaria, la Tierra tiene una compañera constante en su viaje alrededor del Sol: nuestra Luna.
+2. Un eclipse solar, un fenómeno astronómico donde la Luna bloquea completamente la luz solar, es como un juego de sombras en el cielo.
+3. La Tierra y el Sol, aunque separados por una asombrosa distancia de 150 millones de km, están intrínsecamente conectados.
+4. Los agujeros negros, con su densidad extrema y gravedad poderosa, son como monstruos cósmicos que devoran la luz.
+5. Andrómeda, la galaxia más cercana a la Vía Láctea, es como nuestra vecina en el vasto vecindario cósmico.
+6. La Nebulosa de Orión, visible desde la Tierra, es como un faro brillante en el cielo nocturno.
+7. Sirio, la estrella más brillante en el cielo nocturno, es como un faro que guía a los viajeros en la oscuridad.
+
+Datos de nivel avanzado de astronomía:
+1. El telescopio espacial Hubble, lanzado por la NASA en 1990, ha sido los ojos de la humanidad en el universo durante más de tres décadas.
+2. Próxima Centauri, la estrella más cercana a la Tierra aparte del Sol, es como nuestra vecina más cercana en la vasta comunidad estelar.
+3. Nicolas Copérnico, con su teoría heliocéntrica, cambió nuestra comprensión del universo y nuestro lugar en él.
+4. Curiosity, la sonda espacial que aterrizó en Marte en 2012, continúa buscando signos de vida en el planeta rojo.
+5. La velocidad de la luz, 299,792,458 metros por segundo en el vacío, es una constante fundamental que rige el universo.
+6. Rosetta, la misión espacial de la ESA que aterrizó en un cometa en 2014, nos dio una visión sin precedentes de estos viajeros cósmicos.
+7. El universo, con su asombrosa edad de 13.8 mil millones de años, es como un libro de historia cósmica esperando ser leído.

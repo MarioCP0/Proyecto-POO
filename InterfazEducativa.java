@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Clase InterfazEducativa que representa la interfaz gráfica de usuario para una aplicación educativa.
+ */
+
 public class InterfazEducativa {
     private JFrame frame;
     private JPanel panel;
@@ -21,10 +25,15 @@ public class InterfazEducativa {
     private int respuestasCorrectas = 0;
     private int respuestasIncorrectas = 0;
     private List<String[]> preguntas;
-    private int preguntaActual = 0; // Índice de la pregunta actual
+    private int preguntaActual = 0; 
+
+    /**
+     * Constructor de la clase InterfazEducativa.
+     * @param nombreUsuario El nombre del usuario.
+     * @param nivelDificultad El nivel de dificultad seleccionado por el usuario.
+     */
 
     public InterfazEducativa(String nombreUsuario, String nivelDificultad) {
-        // Cargar las preguntas desde el archivo CSV
         preguntas = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader("preguntas.csv"))) {
             String linea;
@@ -38,38 +47,30 @@ public class InterfazEducativa {
         Collections.shuffle(preguntas);
 
 
-        // Crear el marco de la ventana
-        frame = new JFrame("AstroEducación");
+        frame = new JFrame("CosmoGuía");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
 
-        // Crear el panel
         panel = new JPanel();
         frame.add(panel);
         panel.setLayout(null);
 
-        // Crear la etiqueta de bienvenida
-        etiquetaBienvenida = new JLabel("¡Bienvenido al AstroEducación, " + nombreUsuario + "!");
+        etiquetaBienvenida = new JLabel("¡Bienvenido a CosmoGuía, " + nombreUsuario + "!");
         etiquetaBienvenida.setBounds(50, 20, 300, 25);
         panel.add(etiquetaBienvenida);
 
-        // Crear la etiqueta para la pregunta
         etiquetaPregunta = new JLabel("");
         etiquetaPregunta.setBounds(50, 50, 300, 25);
         panel.add(etiquetaPregunta);
         
-         // Cambia el layout del panel a BoxLayout en el eje Y
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        // Crear una scroller para la etiqueta de la pregunta
         JScrollPane scrollPane = new JScrollPane();
         panel.add(scrollPane);
 
-        // Agrega la etiqueta de pregunta a la Jscroller
         etiquetaPregunta = new JLabel("");
         scrollPane.setViewportView(etiquetaPregunta);
 
-        // Crear los botones de opción para las respuestas
         grupoOpciones = new ButtonGroup();
         opcion1 = new JRadioButton("Opción 1");
         opcion1.setActionCommand("Opción 1"); 
@@ -95,12 +96,10 @@ public class InterfazEducativa {
         grupoOpciones.add(opcion4);
         panel.add(opcion4);
 
-        // Crear un botón para enviar la respuesta
         JButton botonResponder = new JButton("Responder");
         botonResponder.setBounds(50, 200, 100, 25);
         panel.add(botonResponder);
 
-        // Agregar un ActionListener al botón para manejar la respuesta del usuario
         botonResponder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -108,31 +107,30 @@ public class InterfazEducativa {
             }
         });
 
-        // Mostrar la primera pregunta del nivel de dificultad seleccionado
         mostrarSiguientePregunta();
 
-        // Hacer visible la ventana
         frame.setVisible(true);
     }
 
+    /**
+     * Método para verificar la respuesta seleccionada por el usuario.
+     */
     private void verificarRespuesta() {
     String[] pregunta = preguntas.get(preguntaActual);
-    String respuestaCorrecta = pregunta[7]; // La respuesta correcta se encuentra en el campo 7
+    String respuestaCorrecta = pregunta[7]; 
 
-    // Obtener el modelo del botón seleccionado por el usuario
     ButtonModel model = grupoOpciones.getSelection();
     
     if (model instanceof DefaultButtonModel) {
-        // Obtener el botón de radio del modelo
         JRadioButton respuestaSeleccionada = (JRadioButton) ((DefaultButtonModel) model).getGroup().getElements().nextElement();
 
         if (respuestaSeleccionada != null) {
             String respuestaUsuario = respuestaSeleccionada.getText();
             if (respuestaUsuario.equals(respuestaCorrecta)) {
-                respuestasCorrectas++; // Incrementa el contador de respuestas correctas
+                respuestasCorrectas++; 
                 JOptionPane.showMessageDialog(frame, "¡Respuesta correcta!", "Feedback", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                respuestasIncorrectas++; // Incrementa el contador de respuestas incorrectas
+                respuestasIncorrectas++; 
                 JOptionPane.showMessageDialog(frame, "Respuesta incorrecta. La respuesta correcta es: " + respuestaCorrecta, "Feedback", JOptionPane.ERROR_MESSAGE);
             }
         } else {
@@ -140,33 +138,33 @@ public class InterfazEducativa {
         }
     }
     
-    // Mostrar la siguiente pregunta
     mostrarSiguientePregunta();
 }
-    
-    // Mostrar puntuacion
+    /**
+     * Método para mostrar la puntuación final al usuario.
+     */
     private void mostrarPuntuacion() {
         JOptionPane.showMessageDialog(frame, "Puntuación final:\nRespuestas correctas: " + respuestasCorrectas + "\nRespuestas incorrectas: " + respuestasIncorrectas, "Puntuación", JOptionPane.INFORMATION_MESSAGE);
     }
 
-
-    // En el método mostrarSiguientePregunta
+    /**
+     * Método para mostrar la siguiente pregunta o finalizar el cuestionario.
+     */
     private void mostrarSiguientePregunta() {
         if (preguntaActual < preguntas.size() - 1 && preguntaActual < 4) {
             preguntaActual++;
             String[] pregunta = preguntas.get(preguntaActual);
 
-            // Usa HTML para permitir el ajuste del texto y el desplazamiento si es necesario
             etiquetaPregunta.setText("<html>" + pregunta[2] + "</html>");
             opcion1.setText(pregunta[3]);
             opcion2.setText(pregunta[4]);
             opcion3.setText(pregunta[5]);
             opcion4.setText(pregunta[6]);
-            grupoOpciones.clearSelection(); // Limpiar la selección de respuestas
+            grupoOpciones.clearSelection(); 
         } else {
             mostrarPuntuacion();
             JOptionPane.showMessageDialog(frame, "Has completado todas las preguntas.", "Fin del cuestionario", JOptionPane.INFORMATION_MESSAGE);
-            frame.dispose(); // Cierra la ventana después de completar todas las preguntas
+            frame.dispose(); 
         }
     }
 }
