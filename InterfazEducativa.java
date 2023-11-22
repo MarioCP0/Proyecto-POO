@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,6 +14,7 @@ import java.awt.Color;
  * Clase InterfazEducativa que representa la interfaz gráfica de usuario para una aplicación educativa.
  */
 
+import java.text.Normalizer;
 public class InterfazEducativa {
     private JFrame frame;
     private JPanel panel;
@@ -27,6 +29,7 @@ public class InterfazEducativa {
     private int respuestasIncorrectas = 0;
     private List<String[]> preguntas;
     private int preguntaActual = 0; 
+    
 
     /**
      * Constructor de la clase InterfazEducativa.
@@ -111,38 +114,66 @@ public class InterfazEducativa {
         mostrarSiguientePregunta();
 
         frame.setVisible(true);
+        guardarInformacionUsuario(nombreUsuario, nivelDificultad);
+    }
+    /**
+     * Método para guardar el nombre del usuario y su nivel de dificultad elegido. 
+     */
+    public void guardarInformacionUsuario(String nombreUsuario, String nivelDificultad) {
+        String archivoCSV = "informacion_usuario.csv";
+        FileWriter fileWriter = null;
+
+        try {
+            fileWriter = new FileWriter(archivoCSV, true); 
+            fileWriter.append(nombreUsuario);
+            fileWriter.append(",");
+            fileWriter.append(nivelDificultad);
+            fileWriter.append("\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                fileWriter.flush();
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
      * Método para verificar la respuesta seleccionada por el usuario.
      */
+
     private void verificarRespuesta() {
-        String[] pregunta = preguntas.get(preguntaActual);
-        String respuestaCorrecta = pregunta[7]; 
+    String[] pregunta = preguntas.get(preguntaActual);
+    String respuestaCorrecta = Normalizer.normalize(pregunta[7].trim(), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""); 
 
-        ButtonModel model = grupoOpciones.getSelection();
-        
-        if (model instanceof DefaultButtonModel) {
-            JRadioButton respuestaSeleccionada = (JRadioButton) ((DefaultButtonModel) model).getGroup().getElements().nextElement();
+    ButtonModel model = grupoOpciones.getSelection();
+    
+    if (model instanceof DefaultButtonModel) {
+        JRadioButton respuestaSeleccionada = (JRadioButton) ((DefaultButtonModel) model).getGroup().getElements().nextElement();
 
-            if (respuestaSeleccionada != null) {
-                String respuestaUsuario = respuestaSeleccionada.getText();
-                if (respuestaUsuario.equals(respuestaCorrecta)) {
-                    respuestasCorrectas++; 
-                    respuestaSeleccionada.setForeground(Color.GREEN); // Cambia el color del texto a verde si la respuesta es correcta
-                    JOptionPane.showMessageDialog(frame, "¡Respuesta correcta!", "Feedback", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    respuestasIncorrectas++; 
-                    respuestaSeleccionada.setForeground(Color.RED); // Cambia el color del texto a rojo si la respuesta es incorrecta
-                    JOptionPane.showMessageDialog(frame, "Respuesta incorrecta. La respuesta correcta es: " + respuestaCorrecta, "Feedback", JOptionPane.ERROR_MESSAGE);
-                }
+        if (respuestaSeleccionada != null) {
+            String respuestaUsuario = Normalizer.normalize(respuestaSeleccionada.getText(), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+
+            if (respuestaUsuario.equals(respuestaCorrecta)) {
+                respuestasCorrectas++; 
+                respuestaSeleccionada.setForeground(Color.GREEN); 
+                JOptionPane.showMessageDialog(frame, "¡Respuesta correcta!", "Feedback", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(frame, "Por favor, seleccione una respuesta.", "Feedback", JOptionPane.WARNING_MESSAGE);
+                respuestasIncorrectas++; 
+                respuestaSeleccionada.setForeground(Color.RED); 
+                JOptionPane.showMessageDialog(frame, "Respuesta incorrecta. La respuesta correcta es: " + respuestaCorrecta, "Feedback", JOptionPane.ERROR_MESSAGE);
             }
+        } else {
+            JOptionPane.showMessageDialog(frame, "Por favor, seleccione una respuesta.", "Feedback", JOptionPane.WARNING_MESSAGE);
         }
- 
-        mostrarSiguientePregunta();
     }
+ 
+    mostrarSiguientePregunta();
+}
+
     
     /**
      * Método para mostrar la puntuación final al usuario.

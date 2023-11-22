@@ -1,19 +1,19 @@
 Basico,Astronomía,¿Cuál es el planeta más cercano al Sol?,Mercurio,Venus,Tierra,Marte,Mercurio
 Intermedio,Astronomía,¿Cuántas lunas tiene la Tierra?,1,2,3,4,1
 Avanzado,Astronomía,¿Cuál es el nombre del telescopio espacial lanzado por la NASA en 1990?,Hubble,Chandra,Spitzer,Kepler,Hubble
-Basico,Astronomía,¿Cuántos planetas hay en nuestro sistema solar?,7,8,9,10,8
-Intermedio,Astronomía,¿Qué fenómeno astronómico ocurre cuando la Luna bloquea completamente la luz solar?,Eclipse solar,Luna llena,Cometa,Meteorito,Eclipse solar
-Avanzado,Astronomía,¿Cuál es la estrella más cercana a la Tierra (aparte del Sol)?,Alfa Centauri,Betelgeuse,Sirio,Próxima Centauri,Próxima Centauri
+Basico,Astronomía,¿Cuántos planetas hay en nuestro sistema solar?,7,8,9,10,7
+Intermedio,Astronomía,¿Qué fenómeno astronómico ocurre cuando la Luna bloquea completamente la luz solar?,Eclipse,Asteroide,Cometa,Meteorito,Eclipse
+Avanzado,Astronomía,¿Cuál es la estrella más cercana a la Tierra (aparte del Sol)?,Alfa Centauri,Betelgeuse,Sirio,Próxima Centauri,Alfa Centauri
 Basico,Astronomía,¿Cuál es el nombre de la galaxia en la que se encuentra nuestro sistema solar?,Vía Láctea,Andrómeda,Canis Major,Trífida,Vía Láctea
-Intermedio,Astronomía,¿Cuál es la distancia promedio entre la Tierra y el Sol?,100 millones de km,150 millones de km,200 millones de km,300 millones de km,150 millones de km
-Avanzado,Astronomía,¿Qué famoso científico propuso la teoría heliocéntrica?,Galileo Galilei,Isaac Newton,Nicolas Copérnico,Johannes Kepler,Nicolas Copérnico
+Intermedio,Astronomía,¿Cuál es la distancia promedio entre la Tierra y el Sol?,100 millones de km,150 millones de km,200 millones de km,300 millones de km,100 millones de km
+Avanzado,Astronomía,¿Qué famoso científico propuso la teoría heliocéntrica?,Nicolas Copérnico, Galileo Galilei,Isaac Newton,Johannes Kepler,Nicolas Copérnico
 Basico,Astronomía,¿Cuál es el nombre de la primera mujer astronauta?,Valentina Tereshkova,Sally Ride,Yuri Gagarin,Neil Armstrong,Valentina Tereshkova
-Intermedio,Astronomía,¿Qué es un agujero negro?,Una estrella moribunda,Un objeto muy denso con gravedad extrema,Un planeta sin luz solar,Un cometa en colisión,Un objeto muy denso con gravedad extrema
+Intermedio,Astronomía,¿Qué es un agujero negro?,Una estrella moribunda,Un objeto muy denso con gravedad extrema,Un planeta sin luz solar,Un cometa en colisión,Una estrella moribunda
 Avanzado,Astronomía,¿Cuál es el periodo orbital de Marte alrededor del Sol?,687 días,365 días,1 año luz,90 días,687 días
-Basico,Astronomía,¿Cuál es la constelación que contiene la estrella más brillante, Sirio,Orión,Canis Major,Escorpio,Canis Major
+Basico,Astronomía,¿Cuál es la constelación que contiene la estrella más brillante, Sirio,Orión,Canis Major,Escorpio,Sirio
 Intermedio,Astronomía,¿Cuál es el objeto más lejano explorado por una sonda de la NASA?,Voyager 1,Plutón,New Horizons,Mariner 9,Voyager 1
 Avanzado,Astronomía,¿Cuál es el nombre de la misión espacial que llevó al hombre a la Luna por primera vez?,Apollo 11,SpaceX,Mercury-Redstone 3,ISS,Apollo 11
-Basico,Astronomía,¿Qué es un meteorito?,Un fragmento de un cometa,Una roca espacial que llega a la Tierra,Un planeta en movimiento,Una explosión solar,Una roca espacial que llega a la Tierra
+Basico,Astronomía,¿Qué es un meteorito?,Una roca espacial que llega a la Tierra, Un fragmento de un cometa,Una roca espacial que llega a la Tierra,Un planeta en movimiento,Una roca espacial que llega a la Tierra
 Intermedio,Astronomía,¿Cuál es el nombre de la galaxia más cercana a la Vía Láctea?,Andrómeda,Canis Major,Magallanes,Orion,Andrómeda
 Avanzado,Astronomía,¿Cuántas lunas tiene el planeta Saturno?,82,53,27,13,82
 Basico,Astronomía,¿Cuál es el nombre de la nave espacial que llevó a los primeros humanos a la Luna en 1969?,Apollo 11,Sputnik 1,Vostok 1,Mercury-Redstone 3,Apollo 11
